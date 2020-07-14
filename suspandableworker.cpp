@@ -43,13 +43,15 @@ void SuspandableWorker::resume(){
 
 void SuspandableWorker::stop(){
 
-    mMutex.lock();
-    if(mIsPaused)
+    if(mIsPaused){
+        qDebug()<<"Pausedmis";
         resume();
-
+    }
+    mMutex.lock();
     mWillStop = true;
     qDebug()<<QThread::currentThread() << "Stop";
     emit finished();
     mMutex.unlock();
+
 }
 
