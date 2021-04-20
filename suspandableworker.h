@@ -13,7 +13,7 @@ class SuspandableWorker : public QObject{
 
 public:
     SuspandableWorker();
-    ~SuspandableWorker();
+    virtual ~SuspandableWorker();
 
 private:
     QMutex mMutex;

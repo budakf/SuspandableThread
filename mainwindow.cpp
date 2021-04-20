@@ -13,7 +13,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 MainWindow::~MainWindow(){
     delete ui;
-//    delete mWorkerThread;
 }
 
 void MainWindow::on_mPlay_clicked(){

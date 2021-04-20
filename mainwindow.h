@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QDebug>
 
+#include <memory>
+
 #include <workerthread.h>
 #include "suspandableworker.h"
 
@@ -22,9 +24,9 @@ public:
     ~MainWindow();
 
 private:
-    Ui::MainWindow *ui;
-    WorkerThread* mWorkerThread;
-    SuspandableWorker* mWorker;
+    Ui::MainWindow *ui{nullptr};
+    WorkerThread* mWorkerThread{nullptr};
+    SuspandableWorker* mWorker{nullptr};
 
 
 private slots:

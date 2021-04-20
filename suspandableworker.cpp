@@ -11,7 +11,7 @@ void SuspandableWorker::play(){
     qDebug()<<QThread::currentThread() << "Play";
 
     while(true){
-        qDebug()<<QThread::currentThread() << "Do Work";
+        QThread::msleep(1000);
         mMutex.lock();
         if(mIsPaused){
             qDebug()<<QThread::currentThread() << "Thread Waiting";
@@ -23,6 +23,7 @@ void SuspandableWorker::play(){
             break;
         }
         mMutex.unlock();
+        qDebug()<<QThread::currentThread() << "Do Work";
     }
 }
 
@@ -44,7 +45,7 @@ void SuspandableWorker::resume(){
 void SuspandableWorker::stop(){
 
     if(mIsPaused){
-        qDebug()<<"Pausedmis";
+        qDebug()<<"Paused";
         resume();
     }
     mMutex.lock();
